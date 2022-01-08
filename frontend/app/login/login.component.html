@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<table>
+    <tr>
+        <td>Korisnicko ime</td>
+        <td><input type="text" name="korime" [(ngModel)]="korime"></td>
+    </tr>
+    <tr>
+        <td>Lozinka</td>
+        <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><button class="btn btn-success" (click)='login()'>Login</button></td>
+    </tr>
+</table>
+{{poruka}}
+<hr>
+<a routerLink="register">Registracija<a>

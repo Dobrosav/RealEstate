@@ -1,0 +1,20 @@
+{{poruka}}
+<table>
+    <tr *ngFor="let u of invalidUsers">
+        <td>{{u.ime}}</td>
+        <td>{{u.prezime}}</td>
+        <td>{{u.korime}}</td>
+        <td><button class="btn btn-success" (click)="confirm(u.korime)">Potvrdi</button></td>
+    </tr>
+</table>
+<table class="allUsers">
+    <tr *ngFor="let u of allUsers">
+        <td>{{u.ime}}</td>
+        <td>{{u.prezime}}</td>
+        <td>{{u.korime}}</td>
+        <td><button class="btn btn-warning" (click)="update(u.korime)">Izmeni korisnika</button>   </td>
+        <td><button class="btn btn-danger" (click)="deleteUser(u.korime)">Obrisi korisnika</button></td>
+    </tr>
+</table>
+<hr>
+<a routerLink="/">Izloguj se</a>

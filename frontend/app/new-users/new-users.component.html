@@ -1,0 +1,73 @@
+<h1>Registracija</h1>
+<table>
+    <tr>
+        <td>Ime</td>
+        <td><input type="text" name="ime" [(ngModel)]="ime"></td>
+    </tr>
+    <tr>
+        <td>Prezime</td>
+        <td><input type="text" name="prezime" [(ngModel)]="prezime"></td>
+    </tr>
+    <tr>
+        <td>Korisnicko ime</td>
+        <td><input type="text" name="korime" [(ngModel)]="korime"></td>
+    </tr>
+    <tr>
+        <td>lozinka</td>
+        <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+    </tr>
+    <tr>
+        <td>lozinka ponovo</td>
+        <td><input type="password" [(ngModel)]="lozinkap"></td>
+    </tr>
+    <tr>
+        <td>Grad</td>
+        <td><input type="text" name="grad" [(ngModel)]="grad"></td>
+    </tr>
+    <tr>
+        <td>Datum Rodjenja</td>
+        <td><input type="date" name="datumRodjenja" [(ngModel)]="datum"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" [(ngModel)]="email"></td>
+    </tr>
+    <tr>
+        <td>Agencija</td>
+        <td>
+            <select #selectelem name="agencija" (change)="change(selectelem.value)">
+                <option value=""></option>
+                <option *ngFor="let a of agencije" [value]="a.pib">{{a.naziv}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Broj licence</td>
+        <td><input type="text" name="brojLicence" [(ngModel)]="bl"></td>
+    </tr>
+    <tr>
+        <td>Slika</td>
+        <td><input type="file" name="slika" [(ngModel)]="slika"></td>
+    </tr>
+    <tr>
+        <td>telefon</td>
+        <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+    </tr>
+    <tr>
+        <td>Tip</td>
+        <td>
+            <input type="radio" name="tip" value="1" [(ngModel)]="tip"> Kupac <br>
+            <input type="radio" name="tip" value="2" [(ngModel)]="tip"> Prodavac
+        </td>
+    </tr>
+    <tr>
+        <td>captcha</td>
+        <td>{{captcha}} <input type="text" name="" [(ngModel)]="captchaodgovor"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><button class="btn btn-success" (click)="register()"> Registracija</button></td>
+    </tr>
+</table>
+{{poruka}}
+<hr>
+<a routerLink="/">Izloguj se</a>

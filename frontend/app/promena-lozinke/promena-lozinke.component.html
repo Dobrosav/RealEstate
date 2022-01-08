@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <td>stara lozinka</td>
+        <td><input type="password" name="oldPassword" [(ngModel)]="old"></td>
+    </tr>
+    <tr>
+        <td>Nova lozinka</td>
+        <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+    </tr>
+    <tr>
+        <td>Lozinka ponovo</td>
+        <td><input type="password" name="np" [(ngModel)]="np"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button class="btn btn-success" (click)="change()">Promeni lozinku</button></td>
+    </tr>
+</table>
+<br>
+{{poruka}}

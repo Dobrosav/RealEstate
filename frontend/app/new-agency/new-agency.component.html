@@ -1,0 +1,39 @@
+<h1>Unos nove agencije</h1>
+<table>
+    <tr>
+        <td>Naziv Agencije</td>
+        <td> <input type="text" name="naziv" [(ngModel)]="naziv"></td>
+    </tr>
+    <tr>
+        <td>Grad</td>
+        <td><input type="text" name="grad" [(ngModel)]="grad"></td>
+    </tr>
+    <tr>
+        <td>telefon</td>
+        <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+    </tr>
+    <tr>
+        <td>pib</td>
+        <td><input type="text" name="pib" [(ngModel)]="pib"></td>
+    </tr>
+    <tr>
+        <td>adresa</td>
+        <td><input type="text" name="adresa" [(ngModel)]="adresa"></td>
+    </tr>
+    <tr>
+       <td colspan="2"><button class="btn btn-success" (click)="ubaci()">Unesi Agenciju</button></td>
+    </tr>
+</table>
+<br>
+{{poruka}}
+<hr>
+<a routerLink="/">Izloguj se</a>
+<div class="right">
+    <table>
+        <tr *ngFor="let a of agencije">
+            <td>{{a.naziv}}</td>
+            <td>{{a.pib}}</td>
+            <td><button class="btn btn-danger" (click)="brisi(a.pib)">Obrisi</button></td>
+        </tr>
+    </table>
+</div>

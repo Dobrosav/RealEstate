@@ -1,0 +1,16 @@
+<h1>update user</h1>
+
+<table>
+    <tr>
+        <td>Ime</td>
+        <td><input type="text" name="ime" value="{{userU.ime}}" [(ngModel)]="ime" ></td>
+    </tr>
+    <tr>
+        <td>Prezime</td>
+        <td><input type="text" name="prezime" value="{{userU.prezime}}" [(ngModel)]="prezime"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button class="btn btn-success" (click)="update()">Izmeni korisnika</button></td>  
+    </tr>
+</table>
+<hr>

@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <td>grad</td>
+        <td>
+            <select #grad name="grad" (change)="changeGrad(grad.value)" >
+                <option *ngFor="let m of Mikrolokacije" value="{{m.grad}}">{{m.grad}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Opstina</td>
+        <td>
+            <select #opstina name="Opstina" (change)="changeOpstina(opstina.value)" >
+                <option *ngFor="let m of Mikrolokacije" value="{{m.Opstina}}">{{m.Opstina}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Mikrolokacija</td>
+        <td><input type="text" name="mikrolokacije" [(ngModel)]="ml"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button (click)="add()" class="btn btn-success">Dodaj</button></td>
+    </tr>
+</table>
+<hr>
+<a routerLink="/">Izloguj se</a>
