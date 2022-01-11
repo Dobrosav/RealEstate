@@ -105,4 +105,99 @@ export class UserService {
       }
       return this.http.post(`${this.uri}/user/addMicrolocation`,data)
     }
+    //ADS
+    getAds(){
+      return this.http.get(`${this.uri}/ads/getAll`)
+    }
+    insertAd(id,Name,City,Municpality,Microlocation,Street,Area,
+      Rooms,
+      ConstructionYear,
+      State,
+      Heating,
+      Floor,
+      TotalFloors,
+      Parking,
+      MonthlyUtilities,
+      About,
+      Price,
+      characteristic,korime,agencija){
+      const data={
+        id:id,
+        Name:Name,
+        City:City,
+        Municpality:Municpality,
+        Microlocation:Microlocation,
+        Street:Street,
+        Area:Area,
+        Rooms:Rooms,
+        ConstructionYear:ConstructionYear,
+        State:State,
+        Heating:Heating,
+        Floor:Floor,
+        TotalFloors:TotalFloors,
+        Parking:Parking,
+        MonthlyUtilities:MonthlyUtilities,
+        About:About,
+        Price:Price,
+        characteristic:characteristic,
+        korime:korime,
+        agencija:agencija
+      }
+      return this.http.post(`${this.uri}/ads/newAd`,data)
+    }
+    getAllAdsPerUser(korime){
+       const data={
+         korime:korime
+        }
+        return this.http.post(`${this.uri}/ads//oglasiOdKorisnika`,data)
+    }
+    updateAdSold(id){
+      const data={
+        id:id
+      }
+      return this.http.post(`${this.uri}/ads/prodataNekretnina`,data)
+    }
+    getAdById(id){
+      const data={
+        id:id
+      }
+      return this.http.post(`${this.uri}/ads/getAdById`,data)
+    }
+    updateById(id,
+      Name,City,Municpality,Microlocation,Street,Area,
+      Rooms,
+      ConstructionYear,
+      State,
+      Heating,
+      Floor,
+      TotalFloors,
+      Parking,
+      MonthlyUtilities,
+      About,
+      Price,
+      characteristic,images){
+        const data={
+          id:id,
+          Name:Name,
+          City:City,
+          Municpality:Municpality,
+          Microlocation:Microlocation,
+          Street:Street,
+          Area:Area,
+          Rooms:Rooms,
+          ConstructionYear:ConstructionYear,
+          State:State,
+          Heating:Heating,
+          Floor:Floor,
+          TotalFloors:TotalFloors,
+          Parking:Parking,
+          MonthlyUtilities:MonthlyUtilities,
+          About:About,
+          Price:Price,
+          characteristic:characteristic,
+          images:images
+        }
+        return this.http.post(`${this.uri}/ads/updateAdById`,data)        
+      }
   }
+

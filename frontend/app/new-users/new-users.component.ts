@@ -100,7 +100,7 @@ export class NewUsersComponent implements OnInit {
       return
     }
     
-    this.s.register(this.ime,this.prezime,this.korime,this.lozinka,this.grad,this.datum,this.email,JSON.stringify(this.agencija),this.bl,this.slika,this.telefon,this.tip).subscribe((resp)=>{
+    this.s.register(this.ime,this.prezime,this.korime,this.lozinka,this.grad,this.datum,this.email,this.agencija.pib,this.bl,this.slika,this.telefon,this.tip).subscribe((resp)=>{
       if(resp['message']=='user added'){
         alert("OK")
       }else{

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Oglas } from 'src/models/Oglas';
 import { User } from 'src/models/user';
 import { UserService } from '../user.service';
 
@@ -13,7 +14,11 @@ export class LoginComponent implements OnInit {
   constructor(private s:UserService, private router:Router) { }
 
   ngOnInit(): void {
+    this.s.getAds().subscribe((data:Oglas[])=>{
+      this.ads=data
+    })
   }
+  ads:Oglas[]=[]
   poruka:string;
   korime:string;
   lozinka:string;

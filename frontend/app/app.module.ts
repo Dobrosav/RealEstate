@@ -16,6 +16,10 @@ import { NewAgencyComponent } from './new-agency/new-agency.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { NewMicrolocationComponent } from './new-microlocation/new-microlocation.component';
 import { PromenaLozinkeComponent } from './promena-lozinke/promena-lozinke.component';
+import { NovaNekretninaComponent } from './nova-nekretnina/nova-nekretnina.component';
+import { UpdateNekretnineProdataComponent } from './update-nekretnine-prodata/update-nekretnine-prodata.component';
+import { ChangeDataAdComponent } from './change-data-ad/change-data-ad.component';
+import { UploadJSONComponent } from './upload-json/upload-json.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,11 @@ import { PromenaLozinkeComponent } from './promena-lozinke/promena-lozinke.compo
     NewAgencyComponent,
     UpdateUserComponent,
     NewMicrolocationComponent,
-    PromenaLozinkeComponent
+    PromenaLozinkeComponent,
+    NovaNekretninaComponent,
+    UpdateNekretnineProdataComponent,
+    ChangeDataAdComponent,
+    UploadJSONComponent
   ],
   imports: [
     BrowserModule,

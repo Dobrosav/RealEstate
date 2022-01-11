@@ -1,0 +1,13 @@
+<table>
+    <tr *ngFor="let a of ads">
+        <td>{{a.id}}</td>
+        <td>{{a.Name}}</td>
+        <td>{{a.City}}</td>
+        <td><button #btn class="btn btn-warning"  (click)="soldbyId(a.id)">{{a.sold===false?'Prodaj':"Prodato"}}</button></td>
+        <td><button class="btn btn-info" (click)="changebyId(a.id)">Izmeni podatke o nekretnini</button></td>
+    </tr>
+</table>
+
+<hr>
+<a routerLink="/">Odjavi</a><br>
+<a routerLink="/kupac">Vrati se</a>

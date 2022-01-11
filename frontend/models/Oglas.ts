@@ -1,4 +1,7 @@
+import { Agency, Oglasivac } from "./Advertizer"
+
 export class Oglas{
+    id:number
     Name:string
     City:string
     Municipality:string
@@ -12,11 +15,12 @@ export class Oglas{
     Floor:number
     TotalFloors:number
     Parking:string
-    MonthlyUtilities:string
+    MonthlyUtilities:number
     Price:number
     About:string
     Characteristics:Array<string>
     images:Array<string>
-    Advertiser:Array<object>
+    prodavac:string
+    agencija:string
     sold:boolean
 }
