@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 let Oglas = new Schema({
+    id: {
+        type: Number
+    },
     Name: {
         type: String
     },
@@ -60,8 +63,11 @@ let Oglas = new Schema({
     images: {
         type: Array
     },
-    Advertiser: {
-        type: Array
+    prodavac: {
+        type: String
+    },
+    agencija: {
+        type: String
     },
     sold: {
         type: Boolean

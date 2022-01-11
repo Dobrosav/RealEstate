@@ -2,6 +2,9 @@ import  mongoose  from "mongoose";
 const Schema=mongoose.Schema
 
 let Oglas=new Schema({
+    id:{
+        type:Number
+    },
     Name:{
         type:String
     },
@@ -56,8 +59,11 @@ let Oglas=new Schema({
     images:{
         type:Array
     },
-    Advertiser:{
-        type:Array
+    prodavac:{
+        type:String
+    },
+    agencija:{
+        type:String
     },
     sold:{
         type:Boolean
