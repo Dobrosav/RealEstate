@@ -18,5 +18,6 @@ userRouter.route('/updatuUser').post((req, res) => new user_controller_1.UserCon
 userRouter.route('/addMicrolocation').post((req, res) => new user_controller_1.UserController().addMicroLocation(req, res));
 userRouter.route('/getMicrolocation').get((req, res) => new user_controller_1.UserController().getMicrolocation(req, res));
 userRouter.route('/changePasword').post((req, res) => new user_controller_1.UserController().changePassword(req, res));
+userRouter.route('/updateKontakt').post((req, res) => new user_controller_1.UserController().updateKontakt(req, res));
 exports.default = userRouter;
 //# sourceMappingURL=user.routes.js.map

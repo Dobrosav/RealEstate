@@ -26,6 +26,7 @@ class AdsControler {
         this.insertAd = (req, res) => {
             let id = parseInt(req.body.id);
             let Name = req.body.Name;
+            let Type = req.body.Type;
             let City = req.body.City;
             let Municpality = req.body.Municpality;
             console.log(Municpality);
@@ -49,7 +50,7 @@ class AdsControler {
             console.log(username);
             let agencija = req.body.agencija;
             let sold = false;
-            let ad = new oglas_1.default({ id: id, Name: Name, City: City, Municipality: Municpality, Microlocation: Microlocation,
+            let ad = new oglas_1.default({ id: id, Name: Name, Type: Type, City: City, Municipality: Municpality, Microlocation: Microlocation,
                 Street: Street, Area: Area, Rooms: Rooms, ConstructionYear: ConstructionYear,
                 State: State, Heating: Heating, Floor: Floor, TotalFloors: TotalFloor, Parking: Parking, MonthlyUtilities: MonthlyUtilities,
                 About: About, Price: Price, Characteristics: characteristic, images: images, prodavac: username, agencija: agencija, sold: sold });
@@ -131,6 +132,16 @@ class AdsControler {
                     else
                         res.json({ 'message': 'error' });
                 }
+            });
+        };
+        this.traziOsnovno = (req, res) => {
+            let tip = req.body.tip;
+            console.log(tip);
+            oglas_1.default.find({ 'sold': false, 'Type': tip }, (err, ad) => {
+                if (err)
+                    console.log(err);
+                else
+                    res.json(ad);
             });
         };
     }

@@ -13,5 +13,6 @@ adsRouter.route('/oglasiOdKorisnika').post((req, res) => new ads_controller_1.Ad
 adsRouter.route('/prodataNekretnina').post((req, res) => new ads_controller_1.AdsControler().prodataNekretnina(req, res));
 adsRouter.route('/getAdById').post((req, res) => new ads_controller_1.AdsControler().getAdById(req, res));
 adsRouter.route('/updateAdById').post((req, res) => new ads_controller_1.AdsControler().updateAdById(req, res));
+adsRouter.route('/traziOsnovno').post((req, res) => new ads_controller_1.AdsControler().traziOsnovno(req, res));
 exports.default = adsRouter;
 //# sourceMappingURL=ads.router.js.map

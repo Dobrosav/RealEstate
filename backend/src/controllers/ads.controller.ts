@@ -17,6 +17,7 @@ export class AdsControler{
     insertAd=(req:express.Request, res:express.Response)=>{
         let id=parseInt(req.body.id)
         let Name=req.body.Name
+        let Type=req.body.Type
         let City=req.body.City
         let Municpality=req.body.Municpality
         console.log(Municpality)
@@ -40,7 +41,7 @@ export class AdsControler{
         console.log(username)
         let agencija=req.body.agencija
         let sold=false
-        let ad=new Oglas({id:id,Name:Name,City:City, Municipality:Municpality,Microlocation:Microlocation,
+        let ad=new Oglas({id:id,Name:Name,Type:Type,City:City, Municipality:Municpality,Microlocation:Microlocation,
         Street:Street,Area:Area,Rooms:Rooms,ConstructionYear:ConstructionYear,
         State:State,Heating:Heating,Floor:Floor,TotalFloors:TotalFloor, Parking:Parking,MonthlyUtilities:MonthlyUtilities,
         About:About,Price:Price,Characteristics:characteristic,images:images,prodavac:username,agencija:agencija,sold:sold})
@@ -119,5 +120,14 @@ export class AdsControler{
                     res.json({'message': 'error'})
             }
         })
+    }
+    traziOsnovno=(req:express.Request, res:express.Response)=>{
+        let tip=req.body.tip
+        console.log(tip)
+        Oglas.find({'sold':false, 'Type':tip},(err,ad)=>{
+            if(err) console.log(err)
+            else res.json(ad)
+        })         
+
     }
 }

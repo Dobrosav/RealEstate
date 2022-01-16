@@ -23,4 +23,7 @@ adsRouter.route('/getAdById').post(
 adsRouter.route('/updateAdById').post(
     (req,res)=>new AdsControler().updateAdById(req,res)
 )
+adsRouter.route('/traziOsnovno').post(
+    (req,res)=>new AdsControler().traziOsnovno(req,res)
+)
 export default adsRouter

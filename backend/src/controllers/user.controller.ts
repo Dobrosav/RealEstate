@@ -2,8 +2,6 @@ import * as express from 'express';
 import agencija from '../models/agencija';
 import User from '../models/user'
 import Mikrolokacija from '../models/mikrolokacija';
-import mikrolokacija from '../models/mikrolokacija';
-
 export class UserController{
     login = (req: express.Request, res: express.Response)=>{
         let username = req.body.korime;
@@ -132,5 +130,22 @@ export class UserController{
             if(err) console.log(err)
             else res.json(m)
         })       
+    }
+    updateKontakt=(req:express.Request, res:express.Response)=>{
+        let korime=req.body.korime
+        let telefon=req.body.telefon
+        let email=req.body.email
+        let agencija=req.body.agencija
+        User.findOne({"korime":korime},(err,users)=>{
+            if(err) console.log(err)
+            else{
+                if(users){
+                    User.collection.updateOne({'korime':korime}, {$set: {'telefon':telefon, 'email':email, 'agencija':agencija}});
+                    res.json({'message': 'ok'})
+                }
+                else
+                    res.json({'message': 'error'})
+            }
+        })        
     }
 }

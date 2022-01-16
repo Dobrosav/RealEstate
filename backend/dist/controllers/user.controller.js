@@ -150,6 +150,24 @@ class UserController {
                     res.json(m);
             });
         };
+        this.updateKontakt = (req, res) => {
+            let korime = req.body.korime;
+            let telefon = req.body.telefon;
+            let email = req.body.email;
+            let agencija = req.body.agencija;
+            user_1.default.findOne({ "korime": korime }, (err, users) => {
+                if (err)
+                    console.log(err);
+                else {
+                    if (users) {
+                        user_1.default.collection.updateOne({ 'korime': korime }, { $set: { 'telefon': telefon, 'email': email, 'agencija': agencija } });
+                        res.json({ 'message': 'ok' });
+                    }
+                    else
+                        res.json({ 'message': 'error' });
+                }
+            });
+        };
     }
 }
 exports.UserController = UserController;

@@ -12,6 +12,9 @@ let Oglas = new Schema({
     Name: {
         type: String
     },
+    Type: {
+        type: String
+    },
     City: {
         type: String
     },

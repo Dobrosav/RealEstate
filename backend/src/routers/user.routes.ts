@@ -40,4 +40,7 @@ userRouter.route('/getMicrolocation').get(
 userRouter.route('/changePasword').post(
     (req,res)=>new UserController().changePassword(req,res)
 )
+userRouter.route('/updateKontakt').post(
+    (req,res)=>new UserController().updateKontakt(req,res)
+)
 export default userRouter;
