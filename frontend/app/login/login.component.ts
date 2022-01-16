@@ -14,10 +14,21 @@ export class LoginComponent implements OnInit {
   constructor(private s:UserService, private router:Router) { }
 
   ngOnInit(): void {
-    this.s.getAds().subscribe((data:Oglas[])=>{
+    this.s.getAllUnsold().subscribe((data:Oglas[])=>{
       this.ads=data
+      let startpoz=this.ads.length-1
+      let br=5
+      while(br>0){
+        this.ads2.push(this.ads[startpoz])
+        startpoz--
+        br--
+    //    alert(this.ads2[0].About)
+      }
+      /*  for(let i=0; i<this.ads.length;i++)
+        alert(this.ads[i].About)*/
     })
   }
+  ads2:Oglas[]=[]
   ads:Oglas[]=[]
   poruka:string;
   korime:string;

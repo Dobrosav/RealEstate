@@ -47,7 +47,7 @@
     </tr>
     <tr>
         <td>Slika</td>
-        <td><input type="file" name="slika" [(ngModel)]="slika"></td>
+        <td><input type="file" name="file" id="field" accept="image/jpeg, image/png" (change)="onFileSelected($event)"></td>
     </tr>
     <tr>
         <td>telefon</td>

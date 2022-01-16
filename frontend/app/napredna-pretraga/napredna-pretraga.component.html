@@ -1,0 +1,59 @@
+<table>
+    <tr>
+        <td>Cena od</td>
+        <td><input type="number" [(ngModel)]="mincena"></td>
+        <td>Cena do</td>
+        <td><input type="number" [(ngModel)]="maxcena"></td>
+    </tr>
+    <tr>
+        <td>min kvadratura</td>
+        <td><input type="number" [(ngModel)]="minarea"></td>
+        <td>max kvadratura</td>
+        <td><input type="number" [(ngModel)]="maxarea"></td>
+    </tr>
+    <tr>
+        <td>min soba</td>
+        <td><input type="number" [(ngModel)]="minsoba"></td>
+        <td>max soba</td>
+        <td><input type="number" [(ngModel)]="maxsoba"></td>
+    </tr>
+    <tr>
+        <td>min  godina</td>
+        <td><input type="number" [(ngModel)]="mingodina"></td>
+        <td>max godina</td>
+        <td><input type="number" [(ngModel)]="maxgodina"></td>
+    </tr>
+    <tr>
+        <td>Tip grejanja</td>
+        <td colspan="3"><input type="checkbox" #s (change)="change(s.value)" value="CG">CG <input type="checkbox" #s1 (change)="change(s1.value)" value="EG">EG <input type="checkbox" #s2 (change)="change(s2.value)" value="TA">TA <input type="checkbox" #s3 (change)="change(s3.value)" value="podno">podno <input type="checkbox" #s4 (change)="change(s4.value)" value="toplotne pumpe">toplotne pumpe</td>
+    </tr>
+    <tr>
+        <td>min  sprat</td>
+        <td><input type="number" [(ngModel)]="minsprat"></td>
+        <td>max sprat</td>
+        <td><input type="number" [(ngModel)]="maxsprat"></td>
+    </tr>
+    <tr>
+        <td>min  rezije</td>
+        <td><input type="number" [(ngModel)]="minrezije"></td>
+        <td>max rezije</td>
+        <td><input type="number" [(ngModel)]="maxrezije"></td> 
+    </tr>
+    <tr>
+        <td colspan="4"><button class="btn btn-success" (click)="trazi()">trazi</button></td>
+    </tr>
+</table>
+<hr>
+<a routerLink="/">Odjavi</a><br>
+<a routerLink="/kupac">Vrati se</a>
+<br>
+<hr>
+<div class="container">
+    <div class="col-sm-12" *ngFor="let a of ads">
+        <h5>{{a.Name}}</h5>
+        <h6>{{a.Type}}</h6>
+        <h6>{{a.City}} {{a.Municipality}} {{a.Microlocation}}</h6>
+        <p>{{a.About}}</p>
+        <span>{{a.Price}}eur {{a.Area}}m<sup>2</sup> {{a.Rooms}}</span>
+    </div>
+</div>

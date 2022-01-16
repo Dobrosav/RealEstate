@@ -1,0 +1,25 @@
+<table>
+    <tr>
+        <td>Kontakt telefon</td>
+        <td><input type="text" value="{{kontakt}}" [(ngModel)]="kontakt"></td>
+    </tr>
+    <tr>
+        <td>E-mail</td>
+        <td><input type="text" value="{{email}}" [(ngModel)]="email"></td>
+    </tr>
+    <tr>
+        <td>Agencija:</td>
+        <td>
+            <select #selectelem name="agencija" (change)="change(selectelem.value)">
+                <option value="{{user.agencija}}"></option>
+               <option *ngFor="let a of agencije" [value]="a.pib">{{a.naziv}}</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+       <td colspan="2"><button class="btn btn-success" (click)="update()">Azuriraj</button></td>
+    </tr>
+</table>
+<hr>
+<a routerLink="/">Odjavi</a><br>
+<a routerLink="/prodavac">Vrati se</a>

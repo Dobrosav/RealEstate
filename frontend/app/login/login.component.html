@@ -15,6 +15,15 @@
 </table>
 {{poruka}}
 <br>
-
 <hr>
-<a routerLink="register">Registracija<a>
+<a routerLink="register">Registracija</a>
+    <hr>
+<br> 
+
+<div class="container">
+    <div class="col-sm-12" *ngFor="let a of ads2">
+        <h5>{{a.Name}}</h5>
+        <p>{{a.About}}</p>
+       <!-- <iframe width="400" height="200" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBPbtsb7f3fTUauiMzUbo5KA4G0SjLqMzM&q="+{{a.Street}}></iframe>-->
+    </div>
+</div>

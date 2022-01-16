@@ -20,6 +20,8 @@ import { NovaNekretninaComponent } from './nova-nekretnina/nova-nekretnina.compo
 import { UpdateNekretnineProdataComponent } from './update-nekretnine-prodata/update-nekretnine-prodata.component';
 import { ChangeDataAdComponent } from './change-data-ad/change-data-ad.component';
 import { UploadJSONComponent } from './upload-json/upload-json.component';
+import { UpdateKontaktComponent } from './update-kontakt/update-kontakt.component';
+import { NaprednaPretragaComponent } from './napredna-pretraga/napredna-pretraga.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { UploadJSONComponent } from './upload-json/upload-json.component';
     NovaNekretninaComponent,
     UpdateNekretnineProdataComponent,
     ChangeDataAdComponent,
-    UploadJSONComponent
+    UploadJSONComponent,
+    UpdateKontaktComponent,
+    NaprednaPretragaComponent
   ],
   imports: [
     BrowserModule,

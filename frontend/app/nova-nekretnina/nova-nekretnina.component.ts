@@ -1,6 +1,7 @@
 import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Oglas } from 'src/models/Oglas';
+import { User } from 'src/models/user';
 import { UserService } from '../user.service';
 
 @Component({
@@ -18,9 +19,14 @@ export class NovaNekretninaComponent implements OnInit {
       this.maxId();
     })
     alert(sessionStorage.getItem('user'))
+    this.s.getUsePerUsername(sessionStorage.getItem('user')).subscribe((data:User)=>{
+      this.u=data
+    })
     this.user=sessionStorage.getItem('user')
   }
+  tip:string
   user:string
+  u:User
   Name:string
   City:string
   Municpality:string
@@ -60,8 +66,9 @@ export class NovaNekretninaComponent implements OnInit {
   }
   add(){
     let max=this.max+1
-      this.s.insertAd(max,this.Name,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.user,null).subscribe((resp)=>{
+      this.s.insertAd(max,this.Name,this.tip,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.user,this.u.agencija).subscribe((resp)=>{
         alert(resp['message'])
+        location.reload()
       })
   }
 }

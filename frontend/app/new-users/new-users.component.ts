@@ -46,6 +46,7 @@ export class NewUsersComponent implements OnInit {
         return true
     return false
   }
+  imageFile:string
   users:User[]=[]
   captcha:string
   captchaodgovor:string
@@ -64,6 +65,32 @@ export class NewUsersComponent implements OnInit {
   tip:number;
   agencije:Agencija[]=[];
   poruka:string;
+  onFileSelected(event){
+    if(event.target.files && event.target.files[0]){
+      var reader=new FileReader()
+      const img=new Image()
+      const fup=(event.target.files)
+      img.src=URL.createObjectURL(fup[0])
+      img.onload=(e:any)=>{
+          let h=e.path[0].height
+          let w=e.path[0].width
+          if(h<100 || w<100 || h>300 || w>300){
+            this.poruka="slika nije ok"    
+            return
+          }
+      }
+      reader.onload=(event:any)=>{
+        var image=new Image()
+        image.onload=()=>{
+          alert(img.width)
+          alert(img.height)
+        };
+        this.imageFile=event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0])
+   //   alert(this.imageFile)
+    }
+  }  
   checkImePrezimeIgrad():boolean{
     if(this.ime.length>3 && this.prezime.length>3 && this.grad.length>3 && this.korime.length>3 && this.email.length>5 && this.telefon.length>6)
       return true
@@ -100,7 +127,7 @@ export class NewUsersComponent implements OnInit {
       return
     }
     
-    this.s.register(this.ime,this.prezime,this.korime,this.lozinka,this.grad,this.datum,this.email,this.agencija.pib,this.bl,this.slika,this.telefon,this.tip).subscribe((resp)=>{
+    this.s.register(this.ime,this.prezime,this.korime,this.lozinka,this.grad,this.datum,this.email,this.agencija.pib,this.bl,this.imageFile,this.telefon,this.tip).subscribe((resp)=>{
       if(resp['message']=='user added'){
         alert("OK")
       }else{

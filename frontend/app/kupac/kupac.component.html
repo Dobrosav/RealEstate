@@ -1,3 +1,48 @@
-<p>kupac works!</p>
-<hr>
+<table class="">
+    <tr>
+        <td>Tip:</td>
+        <td>
+            <select [(ngModel)]="tip">
+                <option value="Stan">Stan</option>
+                <option value="Vikendica">Vikendica</option>
+                <option value="Kuca">Kuca</option>
+                <option value="Lokal">Lokal</option>
+                <option value="Magacin">Magacin</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Lokacija</td>
+        <td><input type="text"[(ngModel)]="Mikrolokacija" placeholder="Grad/Opstina/Mikrolokacija,Grad/Opstina/Mikrolokacija"></td>
+    </tr>
+    <tr>
+        <td>Cena do</td>
+        <td><input type="number" [(ngModel)]="cenado"></td>
+    </tr>
+    <tr>
+        <td>Kvadratura od</td>
+        <td><input type="number" [(ngModel)]="kvadratura"> m <sup>2</sup></td>
+    </tr>
+    <tr>
+        <td>Minimalan broj soba</td>
+        <td><input type="number" [(ngModel)]="soba"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button class="btn btn-success" (click)="trazi()"> Nadji</button></td>
+    </tr>
+</table>
+{{poruka}}
 <a routerLink="/promenaLozinke">Promeni lozinku</a><br>
+<a routerLink="/">Odjavi</a> <br>
+<a href="{{url}}/naprednaPretraga">Napredna pretraga</a>
+<hr>
+<br>
+<div class="container">
+    <div class="col-sm-12" *ngFor="let a of ads">
+        <h5>{{a.Name}}</h5>
+        <h6>{{a.Type}}</h6>
+        <h6>{{a.City}} {{a.Municipality}} {{a.Microlocation}}</h6>
+        <p>{{a.About}}</p>
+        <span>{{a.Price}}eur {{a.Area}}m<sup>2</sup> {{a.Rooms}}</span>
+    </div>
+</div>

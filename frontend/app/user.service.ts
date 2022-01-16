@@ -86,6 +86,15 @@ export class UserService {
       }
       return this.http.post(`${this.uri}/user/changePasword`,data)
     }
+    updateKontakt(korime,telefon,email,agencija){
+      const data={
+        korime:korime,
+        telefon:telefon,
+        email:email,
+        agencija:agencija
+      }
+      return this.http.post(`${this.uri}/user/updateKontakt`,data)
+    }
     updateUserbyAdmin(korime, ime, prezime){
       const data={
         korime:korime,
@@ -109,7 +118,7 @@ export class UserService {
     getAds(){
       return this.http.get(`${this.uri}/ads/getAll`)
     }
-    insertAd(id,Name,City,Municpality,Microlocation,Street,Area,
+    insertAd(id,Name,Type,City,Municpality,Microlocation,Street,Area,
       Rooms,
       ConstructionYear,
       State,
@@ -124,6 +133,7 @@ export class UserService {
       const data={
         id:id,
         Name:Name,
+        Type:Type,
         City:City,
         Municpality:Municpality,
         Microlocation:Microlocation,
@@ -199,5 +209,14 @@ export class UserService {
         }
         return this.http.post(`${this.uri}/ads/updateAdById`,data)        
       }
+    getAllUnsold(){
+      return this.http.get(`${this.uri}/ads/getALlUnsold`)
+    }
+    traziOsnovno(tip){
+      const data={
+        tip:tip
+      }
+      return this.http.post(`${this.uri}/ads/traziOsnovno`,data)
+    }
   }
 

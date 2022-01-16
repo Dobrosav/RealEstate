@@ -36,6 +36,7 @@ export class UploadJSONComponent implements OnInit {
   Microlocation:string
   Street:string
   Area:number
+  tip:string="Stan"
   Rooms:number
   ConstructionYear:number
   State:string
@@ -78,7 +79,7 @@ export class UploadJSONComponent implements OnInit {
     this.characteristic.push(s[19])
     this.korime=s[22].split(':')[1]
     this.agencija=s[23].split(':')[1]
-    this.s.insertAd(this.id,this.Name,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.korime,this.agencija).subscribe((resp)=>{
+    this.s.insertAd(this.id,this.Name,this.tip,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.korime,this.agencija).subscribe((resp)=>{
       alert(resp['message'])
     })
   }

@@ -3,6 +3,7 @@ import { Agency, Oglasivac } from "./Advertizer"
 export class Oglas{
     id:number
     Name:string
+    Type:string
     City:string
     Municipality:string
     Microlocation:string

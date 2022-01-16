@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ChangeDataAdComponent } from './change-data-ad/change-data-ad.component';
 import { KupacComponent } from './kupac/kupac.component';
 import { LoginComponent } from './login/login.component';
+import { NaprednaPretragaComponent } from './napredna-pretraga/napredna-pretraga.component';
 import { NewAgencyComponent } from './new-agency/new-agency.component';
 import { NewMicrolocationComponent } from './new-microlocation/new-microlocation.component';
 import { NewUsersComponent } from './new-users/new-users.component';
@@ -13,6 +14,7 @@ import { OdobrikorisnikaComponent } from './odobrikorisnika/odobrikorisnika.comp
 import { ProdavacComponent } from './prodavac/prodavac.component';
 import { PromenaLozinkeComponent } from './promena-lozinke/promena-lozinke.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdateKontaktComponent } from './update-kontakt/update-kontakt.component';
 import { UpdateNekretnineProdataComponent } from './update-nekretnine-prodata/update-nekretnine-prodata.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UploadJSONComponent } from './upload-json/upload-json.component';
@@ -32,7 +34,9 @@ const routes: Routes = [
   {path:"prodavac/novaNekretnina", component:NovaNekretninaComponent},
   {path:"prodavac/updateSoldAd", component:UpdateNekretnineProdataComponent},
   {path:"prodavac/change", component:ChangeDataAdComponent},
-  {path:"prodavac/uploadJSON", component:UploadJSONComponent}
+  {path:"prodavac/uploadJSON", component:UploadJSONComponent},
+  {path:"prodavac/updateKontakt",component:UpdateKontaktComponent},
+  {path:"kupac/naprednaPretraga", component:NaprednaPretragaComponent}
 ];
 
 @NgModule({
