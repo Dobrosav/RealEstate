@@ -14,5 +14,6 @@ adsRouter.route('/prodataNekretnina').post((req, res) => new ads_controller_1.Ad
 adsRouter.route('/getAdById').post((req, res) => new ads_controller_1.AdsControler().getAdById(req, res));
 adsRouter.route('/updateAdById').post((req, res) => new ads_controller_1.AdsControler().updateAdById(req, res));
 adsRouter.route('/traziOsnovno').post((req, res) => new ads_controller_1.AdsControler().traziOsnovno(req, res));
+adsRouter.route('/json').post((req, res) => new ads_controller_1.AdsControler().insertAd1(req, res));
 exports.default = adsRouter;
 //# sourceMappingURL=ads.router.js.map
