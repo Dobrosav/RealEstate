@@ -1,0 +1,45 @@
+<div class="container bg-warning">
+    <div class="row">
+    <div class="col-sm-12 bg-secondary">
+        <h3>{{ad.Name}}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 d-flex justify-content-end bg-warning">
+        <h4>{{ad.City}}-{{ad.Municipality}}-{{ad.Microlocation}}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <img src="{{ad.images[0]}}" alt="Nema slike">
+    </div>
+    <div class="col-sm-6 d-flex justify-content-end">
+        <p><span class="bb">Tip:{{ad.Type}}</span> <span class="bb">Kvadratura: {{ad.Area}}m<sup>2</sup></span> <span class="bb">Soba:{{ad.Rooms}}</span></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 d-flex justify-content-end">
+        Oglasivac: {{ad.agencija?"agencija":"vlasnik"}} sprat:{{ad.Floor}} <br>
+        Godina izgradnje:{{ad.ConstructionYear}} Ukupna Spratnost:{{ad.TotalFloors}} <br>
+        Stanje:{{ad.State}} Parking:{{ad.Parking}}
+        <br>
+        Tip grejanja:{{ad.Heating}}
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-6">
+            <span class="bb">Karakteristike</span>
+            <br>
+      
+                <input type="checkbox"  #selected  name="Characteristics" [checked]="characteristic.includes(selected.value)" value="Terasa">Terasa <input type="checkbox" #selected2  [checked]="characteristic.includes(selected2.value)" name="Characteristics" value="Internet">internet <input type="checkbox" #selected10  [checked]="characteristic.includes(selected10.value)" name="Characteristics" value="Podrum">Prodrum <br>
+                <input type="checkbox" name="Characteristics" #selected3 [checked]="characteristic.includes(selected3.value)" value="Lift">Lift <input type="checkbox" #selected4  [checked]="characteristic.includes(selected4.value)" name="Characteristics" value="Garaza">Garaza <input type="checkbox" name="Characteristics" #sel56 [checked]="characteristic.includes(sel56.value)"  value="Telefon">Telefon <br>
+                <input type="checkbox" name="Characteristics" #selected6  [checked]="characteristic.includes(selected6.value)" value="Balkon">Balkon <input type="checkbox" #selected7  name="Characteristics"  value="Basta">Basta <input type="checkbox" #selected8  [checked]="characteristic.includes(selected8.value)" name="Characteristics" value="Lodja">Lodja
+        </div>
+        <div class="col-sm-6">
+            <span class="bb">Opis</span> <br>
+            {{ad.About}}
+        </div>
+    </div>
+</div>
+<a routerLink="/">Odjavi</a><br>
+<a routerLink="/kupac">Vrati se</a>

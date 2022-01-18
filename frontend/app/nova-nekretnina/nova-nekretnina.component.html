@@ -86,7 +86,13 @@
     </tr>
     <tr>
         <td>slike</td>
-        <td><input type="file" multiple></td>
+        <td>
+            Glavna: <input type="file" name="file" id="field" accept="image/jpeg, image/png" (change)="onFileSelected($event)"> 
+            <br>
+            Druga: <input type="file" name="file" id="field" accept="image/jpeg, image/png" (change)="onFileSelected($event)">
+            <br>
+            Treca: <input type="file" name="file" id="field" accept="image/jpeg, image/png" (change)="onFileSelected($event)">
+        </td>
     </tr>
     <tr>
         <td colspan="2"><button (click)="add()" class="btn btn-success">Upisi</button></td>

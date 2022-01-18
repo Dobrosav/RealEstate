@@ -11,6 +11,7 @@ import { NewMicrolocationComponent } from './new-microlocation/new-microlocation
 import { NewUsersComponent } from './new-users/new-users.component';
 import { NovaNekretninaComponent } from './nova-nekretnina/nova-nekretnina.component';
 import { OdobrikorisnikaComponent } from './odobrikorisnika/odobrikorisnika.component';
+import { PrikaznekretnineComponent } from './prikaznekretnine/prikaznekretnine.component';
 import { ProdavacComponent } from './prodavac/prodavac.component';
 import { PromenaLozinkeComponent } from './promena-lozinke/promena-lozinke.component';
 import { RegisterComponent } from './register/register.component';
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path:"prodavac/change", component:ChangeDataAdComponent},
   {path:"prodavac/uploadJSON", component:UploadJSONComponent},
   {path:"prodavac/updateKontakt",component:UpdateKontaktComponent},
-  {path:"kupac/naprednaPretraga", component:NaprednaPretragaComponent}
+  {path:"kupac/naprednaPretraga", component:NaprednaPretragaComponent},
+  {path:"kupac/prikaz", component:PrikaznekretnineComponent}
 ];
 
 @NgModule({

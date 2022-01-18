@@ -1,4 +1,3 @@
-import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Oglas } from 'src/models/Oglas';
 import { User } from 'src/models/user';
@@ -44,7 +43,7 @@ export class NovaNekretninaComponent implements OnInit {
   About:string
   Price:number
   characteristic:string[]=[]
-
+  imageFiles:string[]=[]
   max:number
   maxId():void{
     let max=0;
@@ -64,9 +63,35 @@ export class NovaNekretninaComponent implements OnInit {
     }
     alert(JSON.stringify(this.characteristic))    
   }
+  onFileSelected(event){
+    if(event.target.files && event.target.files[0]){
+      var reader=new FileReader()
+      const img=new Image()
+      const fup=(event.target.files)
+      img.src=URL.createObjectURL(fup[0])
+      img.onload=(e:any)=>{
+          let h=e.path[0].height
+          let w=e.path[0].width
+          if(h<100 || w<100 || h>300 || w>300){
+            alert("slika nije ok")    
+            return
+          }
+      }
+      reader.onload=(event:any)=>{
+        var image=new Image()
+        image.onload=()=>{
+          alert(img.width)
+          alert(img.height)
+        };
+        this.imageFiles.push(event.target.result);
+      }
+      reader.readAsDataURL(event.target.files[0])
+   //   alert(this.imageFile)
+    }
+  }
   add(){
     let max=this.max+1
-      this.s.insertAd(max,this.Name,this.tip,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.user,this.u.agencija).subscribe((resp)=>{
+      this.s.insertAd1(max,this.Name,this.tip,this.City,this.Municpality,this.Microlocation,this.Street,this.Area,this.Rooms,this.ConstructionYear,this.State,this.Heating,this.Floor,this.TotalFloors,this.Parking,this.MonthlyUtilities,this.About,this.Price,JSON.stringify(this.characteristic), this.user,this.u.agencija, JSON.stringify(this.imageFiles)).subscribe((resp)=>{
         alert(resp['message'])
         location.reload()
       })

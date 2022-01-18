@@ -49,7 +49,7 @@
 <br>
 <hr>
 <div class="container">
-    <div class="col-sm-12" *ngFor="let a of ads">
+    <div class="col-sm-12" *ngFor="let a of ads" (click)="test(a.id)">
         <h5>{{a.Name}}</h5>
         <h6>{{a.Type}}</h6>
         <h6>{{a.City}} {{a.Municipality}} {{a.Microlocation}}</h6>

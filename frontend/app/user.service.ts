@@ -118,6 +118,44 @@ export class UserService {
     getAds(){
       return this.http.get(`${this.uri}/ads/getAll`)
     }
+    insertAd1(id,Name,Type,City,Municpality,Microlocation,Street,Area,
+      Rooms,
+      ConstructionYear,
+      State,
+      Heating,
+      Floor,
+      TotalFloors,
+      Parking,
+      MonthlyUtilities,
+      About,
+      Price,
+      characteristic,korime,agencija, images){
+      const data={
+        id:id,
+        Name:Name,
+        Type:Type,
+        City:City,
+        Municpality:Municpality,
+        Microlocation:Microlocation,
+        Street:Street,
+        Area:Area,
+        Rooms:Rooms,
+        ConstructionYear:ConstructionYear,
+        State:State,
+        Heating:Heating,
+        Floor:Floor,
+        TotalFloors:TotalFloors,
+        Parking:Parking,
+        MonthlyUtilities:MonthlyUtilities,
+        About:About,
+        Price:Price,
+        characteristic:characteristic,
+        korime:korime,
+        agencija:agencija,
+        images:images
+      }
+      return this.http.post(`${this.uri}/ads/newAd`,data)
+    }
     insertAd(id,Name,Type,City,Municpality,Microlocation,Street,Area,
       Rooms,
       ConstructionYear,
@@ -153,7 +191,7 @@ export class UserService {
         korime:korime,
         agencija:agencija
       }
-      return this.http.post(`${this.uri}/ads/newAd`,data)
+      return this.http.post(`${this.uri}/ads/json`,data)
     }
     getAllAdsPerUser(korime){
        const data={

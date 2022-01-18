@@ -22,6 +22,8 @@ import { ChangeDataAdComponent } from './change-data-ad/change-data-ad.component
 import { UploadJSONComponent } from './upload-json/upload-json.component';
 import { UpdateKontaktComponent } from './update-kontakt/update-kontakt.component';
 import { NaprednaPretragaComponent } from './napredna-pretraga/napredna-pretraga.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PrikaznekretnineComponent } from './prikaznekretnine/prikaznekretnine.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,13 +43,15 @@ import { NaprednaPretragaComponent } from './napredna-pretraga/napredna-pretraga
     ChangeDataAdComponent,
     UploadJSONComponent,
     UpdateKontaktComponent,
-    NaprednaPretragaComponent
+    NaprednaPretragaComponent,
+    PrikaznekretnineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule    
+    FormsModule,
+    NgxPaginationModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

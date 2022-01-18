@@ -48,4 +48,9 @@ export class KupacComponent implements OnInit {
         
     })
   }
+  test(id:number){
+    alert(id)
+    sessionStorage.setItem('idn',id.toString())
+    this.r.navigate(['kupac/prikaz'])
+  }
 }

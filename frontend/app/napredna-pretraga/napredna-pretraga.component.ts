@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { Oglas } from 'src/models/Oglas';
-import { UserService } from '../user.service';
-
+import { UserService } from '../user.service';;
 @Component({
   selector: 'app-napredna-pretraga',
   templateUrl: './napredna-pretraga.component.html',
@@ -9,8 +10,9 @@ import { UserService } from '../user.service';
 })
 export class NaprednaPretragaComponent implements OnInit {
 
-  constructor(private s:UserService) { }
-
+  constructor(private s:UserService, private r:Router) { }
+  totalRecords:number
+  page:number
   ngOnInit(): void {
   }
   mincena:number
@@ -39,6 +41,7 @@ ads:Oglas[]=[]
   trazi(){
     this.s.getAllUnsold().subscribe((data:Oglas[])=>{
       this.ads=data
+      this.totalRecords=this.ads.length
       if(this.mincena)
         this.ads=this.ads.filter(a=>a.Price>=this.mincena)
       if(this.maxcena)
@@ -66,5 +69,10 @@ ads:Oglas[]=[]
       if(this.grejanje.length>0)
         this.ads=this.ads.filter(a=>this.grejanje.includes(a.Heating))
     })    
+  }
+  test(id:number){
+    alert(id)
+    sessionStorage.setItem('idn',id.toString())
+    this.r.navigate(['kupac/prikaz'])
   }
 }
